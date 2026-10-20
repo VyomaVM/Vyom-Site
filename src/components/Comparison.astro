@@ -1,7 +1,7 @@
 ---
 const rows = [
   { feature: 'Isolation model',       docker: 'Namespaces (kernel shared)',    vyoma: 'KVM (own kernel per VM)',      winner: 'vyoma' },
-  { feature: 'Cold start',            docker: '~100ms',                        vyoma: '~250ms',                       winner: 'docker' },
+  { feature: 'Cold start',            docker: '~100ms',                        vyoma: '&lt;250ms',                       winner: 'docker' },
   { feature: 'Memory overhead',       docker: '~2MB',                          vyoma: '~30MB',                         winner: 'docker' },
   { feature: 'Image format',          docker: 'OCI',                           vyoma: 'OCI (same images)',             winner: 'tie' },
   { feature: 'CLI familiarity',       docker: 'docker run/ps/stop',            vyoma: 'vyoma run/ps/stop (superset)', winner: 'vyoma' },
@@ -11,8 +11,8 @@ const rows = [
   { feature: 'Machine-state snapshots', docker: '❌ Not possible',               vyoma: '✅ Restore any snapshot',          winner: 'vyoma' },
   { feature: 'Hibernate to zero',     docker: '❌ Loses state',               vyoma: '✅ Full state preserved',      winner: 'vyoma' },
   { feature: 'Kernel customization',  docker: '❌ Host kernel',               vyoma: '✅ Per-VM kernel',             winner: 'vyoma' },
-  { feature: 'Security layers',       docker: '2–3',                           vyoma: '7 independent layers',         winner: 'vyoma' },
-  { feature: 'Compose support',       docker: 'docker-compose.yml',            vyoma: 'Same file, vm: extensions',   winner: 'tie' },
+  { feature: 'Security architecture', docker: 'Namespaces & capabilities',   vyoma: '4 Enterprise Pillars (KVM)', winner: 'vyoma' },
+  { feature: 'Compose support',       docker: 'docker-compose.yml',            vyoma: 'Auto-discovery (docker-compose & compose.yaml)', winner: 'tie' },
 ];
 ---
 

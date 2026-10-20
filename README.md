@@ -3,11 +3,11 @@
 **Vyoma** (Sanskrit: _sky_, _atmosphere_) is an open-source MicroVM Manager
 powered by [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor) + KVM.
 
-Run OCI images with hardware-level isolation, under 150ms boot times.
+Run OCI images with hardware-level isolation, under 250ms cold boot times.
 
 ## Features
 
-- ⚡ Sub-150ms cold boot via cloud-hypervisor
+- ⚡ Sub-250ms cold boot via cloud-hypervisor
 - 📦 OCI / Docker image compatible — no conversion
 - 🔒 True hardware isolation (KVM, own kernel per VM)
 - 📸 Machine-state snapshots (CPU + RAM + disk)

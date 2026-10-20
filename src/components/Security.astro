@@ -1,12 +1,33 @@
 ---
-const layers = [
-  { num: '1', title: 'KVM Hardware Isolation',     desc: 'CPU-enforced memory boundaries. Not policy — physics.',                               status: 'Active', color: 'var(--green)' },
-  { num: '2', title: 'cloud-hypervisor Isolation', desc: 'Rust VMM with minimal attack surface. ~50k lines vs millions in QEMU.',               status: 'Active', color: 'var(--green)' },
-  { num: '3', title: 'Minimal Device Model',       desc: 'Only virtio-net/blk/vsock + serial. No USB, BIOS, or legacy PCI attack surface.',     status: 'Active', color: 'var(--green)' },
-  { num: '4', title: 'Least-Privilege Daemon',     desc: 'Dedicated vyoma user. Only CAP_SYS_ADMIN, CAP_NET_ADMIN, CAP_NET_RAW, and others. No root runtime.',         status: 'Shipped',   color: 'var(--amber)' },
-  { num: '5', title: 'WireGuard Mesh Encryption',  desc: 'All cluster traffic inside WireGuard tunnels. Zero config. Always-on.',               status: 'v1.5',   color: 'var(--gold-light)' },
-  { num: '6', title: 'Image Signing (Ed25519)',    desc: 'Cryptographic verification before boot. Only signed OCI images can run.',             status: 'Shipped',   color: 'var(--gold-light)' },
-  { num: '7', title: 'Capability-Based API Auth',  desc: 'Token‑based auth today; scoped tokens planned.',       status: 'v2.0',   color: 'var(--cyan)' },
+const pillars = [
+  {
+    num: "1",
+    title: "Hardware MicroVM Isolation",
+    desc: "Dedicated Linux 6.16.9+ guest kernel per VM instance on KVM. 100% independent syscall boundary immune to container escapes with virtio-only devices.",
+    status: "Active / Hardware",
+    color: "var(--green)"
+  },
+  {
+    num: "2",
+    title: "Least-Privilege Host Daemon",
+    desc: "Daemon immediately drops root to dedicated vyoma user (privdrop.rs) with minimal ambient capabilities (CAP_NET_ADMIN, CAP_SYS_ADMIN). No root runtime.",
+    status: "Active / In-Tree",
+    color: "var(--amber)"
+  },
+  {
+    num: "3",
+    title: "Measured Boot & Attestation",
+    desc: "Virtual TPM 2.0 (swtpm) with PCR measurement registers and cryptographic remote attestation quotes (vyoma attest).",
+    status: "Active / swtpm",
+    color: "var(--gold-light)"
+  },
+  {
+    num: "4",
+    title: "Encrypted Mesh & Capability Auth",
+    desc: "L2/L3 TAP network isolation, WireGuard encrypted inter-node tunnels, VXLAN clustering, and Bearer token API authorization.",
+    status: "Active / WireGuard",
+    color: "var(--cyan)"
+  },
 ];
 ---
 
@@ -16,12 +37,12 @@ const layers = [
       <div class="sec__left">
         <p class="label">Security</p>
         <h2 class="heading--sm" style="margin-top:0.75rem">
-          7 layers of defense.<br/>
-          <span class="grad">Each independent.</span>
+          4 enterprise pillars.<br/>
+          <span class="grad">Hardware-rooted trust.</span>
         </h2>
         <p class="subheading" style="margin-top:1rem">
-          An attacker must break every single layer to compromise a host.
-          Three are enforced by hardware. The rest are defense-in-depth.
+          Hardware-rooted defense in depth engineered into every microVM lifecycle.
+          Isolation enforced by CPU hardware, hypervisor boundary, cryptographic boot, and network mesh.
         </p>
 
         <div class="sec__shield">
@@ -43,7 +64,7 @@ const layers = [
 
       <div class="sec__right">
         <div class="layers">
-          {layers.map((l) => (
+          {pillars.map((l) => (
             <div class="layer">
               <div class="layer__num" style={`color:${l.color};border-color:${l.color}30;background:${l.color}08`}>
                 {l.num}

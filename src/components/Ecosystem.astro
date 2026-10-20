@@ -1,13 +1,13 @@
 ---
 const tools = [
-  { icon: '💻', name: 'CLI',        desc: 'Web UI at localhost:8080. Real-time status. UI overhaul planned.',         status: 'Shipped' },
-  { icon: '🎨', name: 'Dashboard',  desc: 'Web UI at localhost:8080. Live metrics, VM management.',            status: 'Active' },
-  { icon: '📦', name: 'Compose',    desc: 'Multi-VM stacks. Docker Compose v3 compatible. Zero migration.',    status: 'Shipped' },
-  { icon: '⚡', name: 'Swarm',      desc: 'VXLAN mesh clustering. Deterministic subnets. One command setup.',  status: 'Shipped' },
-  { icon: '🔧', name: 'SDK',        desc: 'Go, Rust, Python. Programmatic VM management APIs.',                status: 'Alpha'   },
-  { icon: '📝', name: 'VS Code',    desc: 'Extension for managing VMs from VS Code. On roadmap.',             status: 'Planned'   },
-  { icon: '🌐', name: 'Vyoma Hub',  desc: 'OCI registry + Docker Hub bridge. Curated base images.',           status: 'Planned'   },
-  { icon: '🖥',  name: 'Studio',    desc: 'Visual compose editor + network topology visualizer.',              status: 'Planned'   },
+  { icon: '💻', name: 'CLI',        desc: '25+ commands for full microVM lifecycle, snapshots, live teleportation, and compose stacks directly from terminal.', status: 'Shipped', tagClass: 'tag--green' },
+  { icon: '🎨', name: 'Dashboard',  desc: 'Built-in Web UI with live metrics, console, and interactive topology inspector at localhost:8080.', status: 'Active', tagClass: 'tag--cyan' },
+  { icon: '📦', name: 'Compose',    desc: 'Multi-VM stacks with auto-discovery of docker-compose.yml and compose.yaml. Zero migration.', status: 'Shipped', tagClass: 'tag--green' },
+  { icon: '⚡', name: 'Swarm & Mesh', desc: 'VXLAN mesh clustering, WireGuard cross-WAN encryption, and live teleportation.', status: 'Shipped', tagClass: 'tag--green' },
+  { icon: '🔧', name: 'SDK',        desc: 'Official client libraries for Python (pip install vyoma), Go, and Rust.', status: 'Active', tagClass: 'tag--cyan' },
+  { icon: '☸️', name: 'vk8s CRI',   desc: 'Kubernetes CRI v1 plugin. Run Pods as hardware-isolated microVMs.', status: 'CRI v1', tagClass: 'tag--gold' },
+  { icon: '🌐', name: 'Vyoma Hub',  desc: 'OCI registry + Docker Hub bridge. Curated base images.', status: 'Planned', tagClass: 'tag--gold' },
+  { icon: '🖥',  name: 'Studio',    desc: 'Visual compose stack editor and real-time network topology visualizer built directly into Web Dashboard.', status: 'Active', tagClass: 'tag--cyan' },
 ];
 ---
 
@@ -28,7 +28,7 @@ const tools = [
         <div class="card eco__card">
           <div class="eco__top">
             <span class="eco__icon">{t.icon}</span>
-            <span class={`tag ${t.status === 'Shipped' ? 'tag--green' : 'tag--gold'}`}>{t.status}</span>
+            <span class={`tag ${t.tagClass || (t.status === 'Shipped' ? 'tag--green' : 'tag--gold')}`}>{t.status}</span>
           </div>
           <h3 class="eco__name">{t.name}</h3>
           <p class="eco__desc">{t.desc}</p>
