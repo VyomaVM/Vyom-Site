@@ -9,20 +9,27 @@ const pillars = [
   },
   {
     num: "2",
+    title: "Cryptographic Image Signing (Ed25519)",
+    desc: "Signed VMIF manifests and kernel digests verified before boot. Unsigned or tampered layers are strictly rejected prior to hypervisor allocation.",
+    status: "Active / Ed25519",
+    color: "var(--cyan)"
+  },
+  {
+    num: "3",
+    title: "Measured Boot & Virtual TPM 2.0",
+    desc: "Virtual TPM 2.0 (swtpm) with PCR registers measuring kernel binary, initramfs, and boot arguments. Hardware-rooted remote attestation quotes (vyoma attest).",
+    status: "Active / swtpm",
+    color: "var(--gold-light)"
+  },
+  {
+    num: "4",
     title: "Least-Privilege Host Daemon",
     desc: "Daemon immediately drops root to dedicated vyoma user (privdrop.rs) with minimal ambient capabilities (CAP_NET_ADMIN, CAP_SYS_ADMIN). No root runtime.",
     status: "Active / In-Tree",
     color: "var(--amber)"
   },
   {
-    num: "3",
-    title: "Measured Boot & Attestation",
-    desc: "Virtual TPM 2.0 (swtpm) with PCR measurement registers and cryptographic remote attestation quotes (vyoma attest).",
-    status: "Active / swtpm",
-    color: "var(--gold-light)"
-  },
-  {
-    num: "4",
+    num: "5",
     title: "Encrypted Mesh & Capability Auth",
     desc: "L2/L3 TAP network isolation, WireGuard encrypted inter-node tunnels, VXLAN clustering, and Bearer token API authorization.",
     status: "Active / WireGuard",
@@ -37,7 +44,7 @@ const pillars = [
       <div class="sec__left">
         <p class="label">Security</p>
         <h2 class="heading--sm" style="margin-top:0.75rem">
-          4 enterprise pillars.<br/>
+          5 enterprise pillars.<br/>
           <span class="grad">Hardware-rooted trust.</span>
         </h2>
         <p class="subheading" style="margin-top:1rem">

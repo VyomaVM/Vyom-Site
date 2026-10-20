@@ -10,8 +10,9 @@ const rows = [
   { feature: 'Live migration',        docker: '❌ Not possible',               vyoma: '✅ <1 second downtime',          winner: 'vyoma' },
   { feature: 'Machine-state snapshots', docker: '❌ Not possible',               vyoma: '✅ Restore any snapshot',          winner: 'vyoma' },
   { feature: 'Hibernate to zero',     docker: '❌ Loses state',               vyoma: '✅ Full state preserved',      winner: 'vyoma' },
-  { feature: 'Kernel customization',  docker: '❌ Host kernel',               vyoma: '✅ Per-VM kernel',             winner: 'vyoma' },
-  { feature: 'Security architecture', docker: 'Namespaces & capabilities',   vyoma: '4 Enterprise Pillars (KVM)', winner: 'vyoma' },
+  { feature: 'Kernel customization',  docker: '❌ Shared host kernel',        vyoma: '✅ Per-VM tuned kernel (DB, Edge, AI)', winner: 'vyoma' },
+  { feature: 'Cryptographic signing', docker: 'Docker Content Trust (complex)', vyoma: '✅ Ed25519 verified boot & VMIF', winner: 'vyoma' },
+  { feature: 'Security architecture', docker: 'Namespaces & capabilities',   vyoma: '5 Enterprise Pillars (KVM)', winner: 'vyoma' },
   { feature: 'Compose support',       docker: 'docker-compose.yml',            vyoma: 'Auto-discovery (docker-compose & compose.yaml)', winner: 'tie' },
 ];
 ---
