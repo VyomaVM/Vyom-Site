@@ -84,10 +84,10 @@
         <span class="term__title">terminal — vyoma</span>
       </div>
       <div class="term__body codeblock">
-        <span class="c"># Boot an Ubuntu MicroVM via cloud-hypervisor</span><br/>
+        <span class="c"># Boot an Nginx MicroVM via cloud-hypervisor</span><br/>
         <span class="k">$ vyoma run</span>
-        <span class="s"> ubuntu:latest</span>
-        <span class="f"> --vcpu 2 --memory 512M -p 8080:80</span><br/>
+        <span class="s"> nginx:alpine</span>
+        <span class="f"> --vcpu 1 --memory 128M -p 8080:80</span><br/>
         <span class="c">⚡ VM booted in ~250ms — 172.16.0.2</span><br/><br/>
         <span class="c"># Check running VMs</span><br/>
         <span class="k">$ vyoma ps</span><br/>
@@ -109,7 +109,7 @@
         </table><br/>
         <span class="s"># View logs</span>
         <span class="f">$ vyoma logs 3f2a... -f</span><br/>
-        <span class="c">[stdout] Alpine Linux 3.21</span><br/><br/>
+        <span class="c">[stdout] [notice] 1#1: start worker processes</span><br/><br/>
 
         <span class="c"># Snapshot the entire machine state</span><br/>
         <span class="k">$ vyoma snapshot</span>

@@ -31,8 +31,8 @@
         <h3>Run your first VM</h3>
         <p>Pull any OCI image. Boot it as an isolated MicroVM in milliseconds.</p>
         <div class="codeblock">
-          <span class="c"># Boot Ubuntu with 2 vCPUs, 512MB RAM</span><br/>
-          <span class="k">vyoma run</span> <span class="s">ubuntu:latest</span> <span class="f">--vcpu 2 --memory 512M</span><br/><br/>
+          <span class="c"># Boot Nginx with 1 vCPU, 128MB RAM</span><br/>
+          <span class="k">vyoma run</span> <span class="s">nginx:alpine</span> <span class="f">--vcpu 1 --memory 128M -p 80:80</span><br/><br/>
           <span class="c"># List running VMs</span><br/>
           <span class="k">vyoma ps</span><br/><br/>
           <span class="c"># Follow VM logs</span><br/>

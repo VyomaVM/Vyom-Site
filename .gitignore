@@ -4,7 +4,9 @@ node_modules/
 
 # Build outputs
 dist/
+dist_old/
 .astro/
+.astro_old/
 .output/
 
 # Logs

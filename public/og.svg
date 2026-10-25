@@ -101,8 +101,8 @@
       <text x="0" y="38" fill="#f0c040">$ </text>
       <text x="26" y="38" fill="#f0c040">vyoma</text>
       <text x="98" y="38" fill="#a0a0ae"> run </text>
-      <text x="144" y="38" fill="#34d399">ubuntu:latest</text>
-      <text x="282" y="38" fill="#22d3ee">--vcpu 2 --memory 512M -p 8080:80</text>
+      <text x="144" y="38" fill="#34d399">nginx:alpine</text>
+      <text x="272" y="38" fill="#22d3ee">--vcpu 1 --memory 128M -p 8080:80</text>
       <text x="0" y="76" fill="#3a3a55">⚡ VM booted in 184ms — 172.16.0.2</text>
       <text x="0" y="134" fill="#3a3a55"># Hardware-isolated — own kernel via KVM</text>
       <text x="0" y="172" fill="#f0c040">$ </text>
